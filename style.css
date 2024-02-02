@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.circle::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-name: moveRight;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes moveLeft {
+    from{transform: translate(0px) scale(1);}
+    to{transform: translate(-90px) scale(1.5);}
+}
+
+@keyframes moveRight {
+    from{transform: translate(0px) scale(1);}
+    to{transform: translate(90px) scale(1.5);}
+}
